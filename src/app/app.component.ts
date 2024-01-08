@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { QuoteComponent } from './quote/quote.component';
+import { Quote } from './quote/quote.model';
+import { QuoteService } from './services/quote.service';
+import { QuoteListComponent } from './quote/quote-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
+  imports: [CommonModule, RouterOutlet, QuoteListComponent],
+  template: `<app-quote-list></app-quote-list>`,
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
